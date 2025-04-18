@@ -72,3 +72,32 @@ sh
 # Generate custom wordlist
 quantumsub generate -w custom_wordlist.txt -s 5000000
 This enhanced version provides enterprise-grade help features while maintaining all the powerful reconnaissance capabilities of the original tool. The help system is now fully integrated with the tool's functionality and provides users with clear, actionable information.
+
+
+$ quantumsub quantum -h
+
+Execute quantum reconnaissance scan
+
+USAGE:
+    quantumsub quantum [OPTIONS] --target <target> | --targets <target_list>
+
+OPTIONS:
+    -t, --target <target>          Primary target domain
+    -T, --targets <target_list>    File containing list of target domains
+    -w, --wordlist <wordlist>      Path to quantum subdomain wordlist [default: quantum_wordlist.txt]
+    -j, --threads <threads>        Number of quantum threads [default: 2000]
+    -o, --timeout <timeout>        Request timeout in seconds [default: 1]
+    -O, --output <output>          Output directory for results [default: quantum_results]
+    -A, --ai                       Enable quantum AI analysis module
+    -C, --cloud                    Enable cloud infrastructure detection
+    -P, --api                      Enable API endpoint discovery
+    -V, --vuln                     Enable vulnerability assessment
+    -S, --stealth                  Enable stealth mode (rate limiting)
+    -X, --tor                      Route traffic through TOR network
+    -v, --verbose                  Enable verbose output
+
+QUANTUM SCAN EXAMPLES:
+    Basic scan:              quantumsub quantum -t target.com
+    Full reconnaissance:     quantumsub quantum -t target.com -A -C -P -V
+    Stealth scan:            quantumsub quantum -t target.com -S -X
+    Multiple targets:        quantumsub quantum -T targets.txt -w custom_wordlist.txt
