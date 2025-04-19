@@ -1,0 +1,5 @@
+echo "/target
+Cargo.lock
+.DS_Store
+*.log
+.env" > .gitignore
