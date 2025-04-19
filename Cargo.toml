@@ -1,0 +1,36 @@
+[package]
+name = "quantumsub"
+version = "0.1.0"
+edition = "2021"  # Uses Rust 2021 features
+#authors = ["Your Name <your.email@example.com>"]
+description = "QuantumSub Recon Elite+ - Advanced subdomain enumeration tool"
+license = "GPL-3.0"
+repository = "https://github.com/ftprotap9210poc/quantumsub"
+
+[dependencies]
+# Core dependencies
+clap = { version = "4.0", features = ["derive"] }  # Command-line parsing
+reqwest = { version = "0.11", features = ["blocking", "json"] }  # HTTP client
+tokio = { version = "1.0", features = ["full"] }  # Async runtime
+serde = { version = "1.0", features = ["derive"] }  # Serialization
+serde_json = "1.0"  # JSON handling
+
+# Security/Networking
+openssl = "0.10"  # SSL/TLS support
+trust-dns-resolver = "0.20"  # DNS resolution
+rayon = "1.5"  # Parallel processing
+
+# Optional features (uncomment if needed)
+# [dependencies.indicatif]
+# version = "0.16"  # Progress bars
+# 
+# [dependencies.sysinfo]
+# version = "0.23"  # System monitoring
+
+[dev-dependencies]
+tempfile = "3.3"  # For tests
+
+[profile.release]
+lto = true        # Link-time optimization
+codegen-units = 1  # Better optimization
+opt-level = 3      # Aggressive optimization
